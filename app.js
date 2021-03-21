@@ -34,6 +34,7 @@ let business = [
   "business intelligence",
   "who takes business intelligence",
   "CST3340",
+  "CST 3340",
 ];
 
 let projectManagement = [
@@ -41,6 +42,7 @@ let projectManagement = [
   "project management",
   "who takes project management",
   "CST2560",
+  "CST 2560",
 ];
 
 let softwareEngineering = [
@@ -48,6 +50,7 @@ let softwareEngineering = [
   "software engineering",
   "who takes software engineering",
   "CST2550",
+  "CST 2550",
 ];
 
 let webApplication = [
@@ -55,6 +58,7 @@ let webApplication = [
   "web application",
   "who takes web application",
   "CST2120",
+  "CST 2120",
 ];
 
 let informationSystems = [
@@ -64,12 +68,14 @@ let informationSystems = [
   "information system",
   "who takes information system",
   "CST2310",
+  "CST 2310",
 ];
 
 let UserExperience = [
   "User experience",
   "user experience",
   "who takes user experience",
+  "UX",
 ];
 
 let greetings = ["hello", "hi", "how are you", "howdy"];
@@ -256,7 +262,7 @@ const vaVoice = (userMessage) => {
   for (let i = 0; i < softwareEngineering.length; i++) {
     if (userMessage.indexOf(softwareEngineering[i]) > -1) {
       speech.text =
-        "Project Management and Professional Practice is is taught by Aditya Santokhee, i just opened MDX My Learning for more detailed information";
+        "Software Engineering is is taught by Aditya Santokhee, i just opened MDX My Learning for more detailed information";
       window.open(
         "https://mdx.mrooms.net/",
         "My Learning",
