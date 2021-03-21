@@ -89,6 +89,9 @@ body {
 }
 .commands {
   overflow-y: auto;
+  height: 500px;
+
+  padding: 18px;
 }
 
 .floatReply {
