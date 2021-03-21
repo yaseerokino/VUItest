@@ -85,6 +85,11 @@ body {
   font-size: 15px;
   color: white;
 }
+.activate {
+}
+.commands {
+  overflow-y: auto;
+}
 
 .floatReply {
   float: right;

@@ -5,6 +5,73 @@ function updateScroll() {
   element.scrollTop = element.scrollHeight;
 }
 
+//Modules
+
+let undergraduate = [
+  "Undergraduate individual project",
+  "individual project",
+  "Individual project",
+  "final year project",
+  "Final year project",
+  "undergraduate individual project",
+  "CST3990",
+];
+
+let novelInteraction = [
+  "Who takes novel interaction",
+  "novel interaction details",
+  "novel interaction room",
+  "what room so i have novel interaction",
+  "novel interaction",
+  "novel",
+  "interaction",
+  "novel interaction lecturer",
+  "CST3140",
+];
+
+let business = [
+  "Business intelligence",
+  "business intelligence",
+  "who takes business intelligence",
+  "CST3340",
+];
+
+let projectManagement = [
+  "Project management",
+  "project management",
+  "who takes project management",
+  "CST2560",
+];
+
+let softwareEngineering = [
+  "Software engineering",
+  "software engineering",
+  "who takes software engineering",
+  "CST2550",
+];
+
+let webApplication = [
+  "Web Application",
+  "web application",
+  "who takes web application",
+  "CST2120",
+];
+
+let informationSystems = [
+  "Information systems",
+  "Information system",
+  "information systems",
+  "information system",
+  "who takes information system",
+  "CST2310",
+];
+
+let UserExperience = [
+  "User experience",
+  "user experience",
+  "who takes user experience",
+];
+
 let greetings = ["hello", "hi", "how are you", "howdy"];
 let greetingsreply = ["i am good, how are you", "hey, how are you doing"];
 let possibleGreetingsReply = [
@@ -25,14 +92,7 @@ let replyAfterGreeting = [
   "that's great, always remember to stay happy, and how may i be of assistance to you ",
 ];
 
-let modules = [
-  "module",
-  "my modules",
-  "modules",
-  "what modules do i take",
-  "courses",
-  "course",
-];
+let modules = ["module", "modules", "courses", "course"];
 
 let referencing = [
   "how do i reference",
@@ -52,17 +112,6 @@ let programming = [
   "program",
 ];
 
-let novelInteraction = [
-  "Who takes novel interaction",
-  "novel interaction details",
-  "novel interaction room",
-  "what room so i have novel interaction",
-  "novel interaction",
-  "novel",
-  "interaction",
-  "novel interaction lecturer",
-];
-
 let created = [
   "created",
   "who created you",
@@ -71,8 +120,6 @@ let created = [
   "who made you",
   "made you",
 ];
-
-let reference;
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -144,10 +191,77 @@ const vaVoice = (userMessage) => {
     }
   }
 
+  //modules ******** courses********
+
   for (let i = 0; i < novelInteraction.length; i++) {
     if (userMessage.indexOf(novelInteraction[i]) > -1) {
       speech.text =
-        "Novel Interaction is taken in room BG03 and is taught by Dr Girish Bekaroo, lecture time is always on tuesdays, from 1pm to 4pm";
+        "Novel Interaction is taken in room BG05 and is taught by Dr Girish Bekaroo, lecture time is always on tuesdays, from 1pm to 4pm, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
+    }
+  }
+
+  for (let i = 0; i < undergraduate.length; i++) {
+    if (userMessage.indexOf(undergraduate[i]) > -1) {
+      speech.text =
+        "Undergraduate Individual Project is taken in room CG03 and is taught by Dr Girish Bekaroo, lecture is scheduled for some thursdays, from 1pm to 2pm, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
+    }
+  }
+
+  for (let i = 0; i < business.length; i++) {
+    if (userMessage.indexOf(business[i]) > -1) {
+      speech.text =
+        "Business Intelligence is taken in room CG03 and is taught by Dr Suraj Juddo, lecture time is always on mondays, from 2pm to 3pm, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
+    }
+  }
+
+  for (let i = 0; i < UserExperience.length; i++) {
+    if (userMessage.indexOf(UserExperience[i]) > -1) {
+      speech.text =
+        "User Experience (UX) is taken in room CG03 and is taught by Dr Priscilla Ramsamy, lecture time is always on mondays, from 10am to 11am, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
+    }
+  }
+
+  for (let i = 0; i < projectManagement.length; i++) {
+    if (userMessage.indexOf(projectManagement[i]) > -1) {
+      speech.text =
+        "Project Management and Professional Practice is is taught by Waseemah Moedeen, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
+    }
+  }
+
+  for (let i = 0; i < softwareEngineering.length; i++) {
+    if (userMessage.indexOf(softwareEngineering[i]) > -1) {
+      speech.text =
+        "Project Management and Professional Practice is is taught by Aditya Santokhee, i just opened MDX My Learning for more detailed information";
+      window.open(
+        "https://mdx.mrooms.net/",
+        "My Learning",
+        "height=700,width=900"
+      );
     }
   }
 
@@ -155,15 +269,27 @@ const vaVoice = (userMessage) => {
     if (userMessage.indexOf(referencing[i]) > -1) {
       speech.text =
         "Middlesex university uses the Harvard referencing standard, i just opened a page on a new tab, where you access documents on using harvard referencing";
-      window.open("https://www.w3schools.com");
+
+      window.open(
+        "https://www.citethisforme.com/citation-generator/harvard",
+        "Harvard Referencing",
+        "height=700,width=900"
+      );
     }
   }
 
   for (let i = 0; i < modules.length; i++) {
     if (userMessage.indexOf(modules[i]) > -1) {
-      speech.text =
-        "Your modules include, CST3140 - Novel Interaction, CST3340 - Business Intelligence, CST3180 - User Experience and Design, and finally CST3990 - Information Technology Project, which caters for your individual undergraduate project., will that be all";
+      speech.text = "Which Module do you want information on";
     }
+  }
+
+  if (
+    userMessage.includes("dissertation") ||
+    userMessage.includes("Dissertation")
+  ) {
+    speech.text =
+      "MDX Leaning enhancement team can provide you with information in regards to writing your dissertations you can email them at n.rozah@mdx.ac.mu";
   }
 
   if (userMessage.includes("thank you")) {
@@ -171,15 +297,19 @@ const vaVoice = (userMessage) => {
       "you are most welcome, is there anything else i can do for you";
   }
 
-  // if (userMessage.includes("Java") || userMessage.includes("java")) {
-  //   speech.text =
-  //     "you can learn the JAVA programming language on linkedIn learning, i just opened the Unihub login page on a new browser window, enter your valid credentials, and you will be redirected to LinkedIn learning, if you don't want use linkedIn learning.";
-  //   window.open(
-  //     "https://www.linkedin.com/checkpoint/enterprise/login/42408908?application=learning",
-  //     "LinkedIn Learning",
-  //     "height=500,width=700"
-  //   );
-  // }
+  if (userMessage.includes("yes") || userMessage.includes("Yes")) {
+    speech.text =
+      "Alright, don't forget to activate me when you need something";
+  }
+
+  if (userMessage.includes("no") || userMessage.includes("No")) {
+    speech.text = "What else would you like me to do for you";
+  }
+
+  if (userMessage.includes("thank you")) {
+    speech.text =
+      "you are most welcome, is there anything else i can do for you";
+  }
 
   if (
     userMessage.includes("Javascript") ||
@@ -188,6 +318,21 @@ const vaVoice = (userMessage) => {
   ) {
     speech.text =
       "you can learn the Javascript programming language on linkedIn learning, i just opened the Unihub login page on a new browser window, enter your valid credentials, and you will be redirected to LinkedIn learning, from there you can just search javascript and you will see a variety of courses and tutorials, If it's not good enough, you can always search youtube.com";
+
+    window.open(
+      "https://www.linkedin.com/checkpoint/enterprise/login/42408908?application=learning",
+      "LinkedIn Learning",
+      "height=500,width=700"
+    );
+  }
+
+  if (
+    userMessage.includes("programming") ||
+    userMessage.includes("how to program") ||
+    userMessage.includes("where can i program")
+  ) {
+    speech.text =
+      "you can learn the programming on linkedIn learning, i just opened the Unihub login page on a new browser window, enter your valid credentials, and you will be redirected to LinkedIn learning, from there you can just search programming and you will see a variety of courses and tutorials, If it's not good enough, you can always search youtube.com";
     window.open(
       "https://www.linkedin.com/checkpoint/enterprise/login/42408908?application=learning",
       "LinkedIn Learning",
@@ -219,7 +364,7 @@ const vaVoice = (userMessage) => {
       userMessage +
       ".... i just opened a browser window with the results";
     url = "http://www.google.com/search?q=" + userMessage;
-    window.open(url, "Search", "height=500,width=700");
+    window.open(url, "Antonym | Synonym", "height=500,width=700");
   }
 
   if (userMessage.includes("Python") || userMessage.includes("python")) {
@@ -232,9 +377,6 @@ const vaVoice = (userMessage) => {
     );
   }
 
-  //   if (userMessage.includes("how are you")) {
-  //     speech.text = "I am fine, thanks. How are you ?";
-  //   }
   speech.volume = 1;
   speech.rate = 1;
   speech.pitch = 1;
@@ -267,50 +409,3 @@ recognition.onresult = (event) => {
 activate.addEventListener("click", () => {
   recognition.start();
 });
-
-// const main = document.querySelector(".main");
-
-// let greetings = ["hello", "hi", "good day"];
-
-// window.SpeechRecognition =
-//   window.SpeechRecognition || window.webkitSpeechRecognition;
-
-// const recognition = new window.SpeechRecognition();
-// recognition.interimResults = true;
-
-// let p = document.createElement("p");
-
-// recognition.addEventListener("result", (e) => {
-//   const text = Array.from(e.results)
-//     .map((result) => result[0])
-//     .map((result) => result.transcript)
-//     .join("");
-
-//   p.innerHTML = text;
-//   main.appendChild(p);
-
-//   if (e.results[0].isFinal) {
-//     for (let i = 0; i < greetings.length; i++) {
-//       if (text.indexOf(greetings[i]) > -1) {
-//         p = document.createElement("p");
-//         p.classList.add("right");
-//         p.innerText = "Welcome my name is VA";
-//         main.appendChild(p);
-//       } else if (text.includes("are you")) {
-//         p = document.createElement("p");
-//         p.classList.add("right");
-//         p.innerText = "i am your virtual assitant";
-//         main.appendChild(p);
-//       }
-//     }
-
-//     p = document.createElement("p");
-//   }
-//   console.log(text);
-// });
-
-// recognition.addEventListener("end", () => {});
-
-// const appStart = () => {
-//   recognition.start();
-// };
