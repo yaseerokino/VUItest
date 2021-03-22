@@ -346,7 +346,12 @@ const vaVoice = (userMessage) => {
     );
   }
 
-  if (userMessage.includes("search") || userMessage.includes("Search")) {
+  if (
+    userMessage.includes("search") ||
+    userMessage.includes("Search") ||
+    userMessage.includes("meaning") ||
+    userMessage.includes("Meaning")
+  ) {
     speech.text =
       "Alright i will " +
       userMessage +
