@@ -5,8 +5,7 @@ function updateScroll() {
   element.scrollTop = element.scrollHeight;
 }
 
-//Modules
-
+//possible utterances
 let undergraduate = [
   "Undergraduate individual project",
   "individual project",
@@ -127,13 +126,13 @@ let created = [
   "made you",
 ];
 
+//initiate speech engine
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
 const recognition = new window.SpeechRecognition();
 
-//recognition.interimResults = true;
-
+//user speech to text
 const humanText = (text) => {
   const chatP = document.createElement("p");
   chatP.classList.add("message");
@@ -153,6 +152,7 @@ const humanText = (text) => {
   return chatP;
 };
 
+//VUI response text
 const vaText = (text) => {
   const chatPVa = document.createElement("p");
   chatPVa.classList.add("reply");
@@ -167,15 +167,15 @@ const vaText = (text) => {
   const chatTextVa = document.createTextNode(text);
   chatPVa.appendChild(chatTextVa);
   chatPVa.appendChild(spanVa);
-
-  //main.appendChild(chatP);
   return chatPVa;
 };
 
+//VUI response
 const vaVoice = (userMessage) => {
   const speech = new SpeechSynthesisUtterance();
   speech.text = "Sorry I did not understand that";
 
+  //iterates through all possible utterance and keywords, the returns results
   for (let i = 0; i < greetings.length; i++) {
     if (userMessage.indexOf(greetings[i]) > -1) {
       let randomGreeting =
@@ -397,16 +397,12 @@ const vaVoice = (userMessage) => {
   updateScroll();
 };
 
+//start speech recognition
 recognition.onstart = () => {
   console.log("voice activated");
-  // const speech = new SpeechSynthesisUtterance();
-  // speech.text =
-  //   "Hello, i am your persona virtual assistant, how may i be of help";
-  // window.speechSynthesis.speak(speech);
-  // let main = document.querySelector(".main");
-  // main.appendChild(vaText(speech.text));
 };
 
+//when user stops talking
 recognition.onresult = (event) => {
   console.log(event);
   const resultIndex = event.resultIndex;
@@ -417,6 +413,7 @@ recognition.onresult = (event) => {
   vaVoice(transcript);
 };
 
+//button to start speech recognition
 activate.addEventListener("click", () => {
   recognition.start();
 });
